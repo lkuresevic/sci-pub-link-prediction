@@ -1,4 +1,6 @@
+from torch_geometric.utils import negative_sampling
 from sklearn.metrics import roc_auc_score
+import torch
 
 @torch.no_grad()
 def eval_link_predictor(model, data):

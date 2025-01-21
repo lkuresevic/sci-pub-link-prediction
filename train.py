@@ -1,4 +1,6 @@
 from torch_geometric.utils import negative_sampling
+import torch
+from eval import eval_link_predictor
 
 def train_link_predictor(model, train_data, val_data, optimizer, criterion, n_epochs=100):
 

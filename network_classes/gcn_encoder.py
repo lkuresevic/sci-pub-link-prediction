@@ -1,6 +1,7 @@
 import torch.nn as nn
 from torch_geometric.nn import GCNConv
 import torch.nn.functional as F
+import torch
 
 class GCN_Encoder(torch.nn.Module):
     def __init__(self, in_channels, hidden_channels, out_channels):
