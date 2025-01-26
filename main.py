@@ -6,7 +6,6 @@ from network_classes.gcn_encoder import GCN_Encoder
 from utils import *
 from train import *
 from eval import *
-from constants import *
 
 if __name__ == '__main__':
     set_seed()
@@ -14,7 +13,11 @@ if __name__ == '__main__':
     # Load Cora    
     dataset = load_cora()
     graph = dataset[0]
-    
+
+    # Uncomment for graph visualization
+#    g, y = convert_to_networkx(graph)
+#    plot_graph(g, y)
+
     # Split dataset
     train_data, val_data, test_data = split_data(graph)
 
@@ -30,4 +33,4 @@ if __name__ == '__main__':
     test_auc = eval_link_predictor(model, test_data)
     print(f"Test: {test_auc:.3f}")
 
-
+    
